@@ -8,9 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/animacion.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://bitstorm.org/jquery/color-animation/jquery.animate-colors-min.js"></script>
+    
     <title>Animación</title>
 </head>
 <body>
@@ -31,11 +35,116 @@
                     <li class="nav-item">
                       <a class="nav-link text-secondary"  href="HTML/ejercicio.html">Ejercicio</a>
                     </li>
+                    <li>
+                      <button class="btn btn-primary" style="margin-left: 450px;" id="play">Play</button>
+                    </li>
+                    <li>
+                      <button class="btn btn-danger" style="margin-left: 50px;" id="clean">Clean</button>
+                    </li>
                   </ul>
     </div>
 
     <div class="Main" id="main">
+      <div class="pantalla">
+            <span class="mensaje" id="mensaje">Los uzielitos</span> 
+      </div>
 
+      <div class="r1 text-center" id="r1">
+        <div class="r1-1" id="r1-1"></div>
+        <div class="r1-2" id="r1-2"></div>
+        <div class="r1-3" id="r1-3"><b>A</b></div>
+        <div class="r1-4" id="r1-4"><b>B</b></div>
+        <div class="r1-5" id="r1-5"><b>A</b></div>
+        <div class="r1-6" id="r1-6"><b>C</b></div>
+        <div class="r1-7" id="r1-7"><b>A</b></div>
+        <div class="r1-8" id="r1-8"><b>D</b></div>
+        <div class="r1-9" id="r1-9"><b>Z</b></div>
+
+      </div> 
+
+      <div class="r2 text-center" id="r2">
+        <div class="r2-1" id="r2-1"></div>
+        <div class="r2-2" id="r2-2"><b>0</b></div>
+        <div class="r2-3" id="r2-3"><b>0</b></div>
+        <div class="r2-4" id="r2-4"><b>0</b></div>
+        <div class="r2-5" id="r2-5"><b>0</b></div>
+        <div class="r2-6" id="r2-6"><b>0</b></div>
+        <div class="r2-7" id="r2-7"><b>0</b></div>
+        <div class="r2-8" id="r2-8"><b>0</b></div>
+        <div class="r2-9" id="r2-9"><b>0</b></div>
+      </div> 
+
+      <div class="r3 text-center" id="r3">
+        <div class="r3-1" id="r3-1"><b>A</b></div>
+        <div class="r3-2" id="r3-2"><b>0</b></div>
+        <div class="r3-3" id="r3-3"><b>1</b></div>
+        <div class="r3-4" id="r3-4"><b>1</b></div>
+        <div class="r3-5" id="r3-5"><b>1</b></div>
+        <div class="r3-6" id="r3-6"><b>1</b></div>
+        <div class="r3-7" id="r3-7"><b>1</b></div>
+        <div class="r3-8" id="r3-8"><b>1</b></div>
+        <div class="r3-9" id="r3-9"><b>1</b></div>
+      </div> 
+
+      <div class="r4 text-center" id="r4">
+        <div class="r4-1" id="r4-1"><b>A</b></div>
+        <div class="r4-2" id="r4-2"><b>0</b></div>
+        <div class="r4-3" id="r4-3"><b>1</b></div>
+        <div class="r4-4" id="r4-4"><b>1</b></div>
+        <div class="r4-5" id="r4-5"><b>2</b></div>
+        <div class="r4-6" id="r4-6"><b>2</b></div>
+        <div class="r4-7" id="r4-7"><b>2</b></div>
+        <div class="r4-8" id="r4-8"><b>2</b></div>
+        <div class="r4-9" id="r4-9"><b>2</b></div>
+      </div> 
+
+      <div class="r5 text-center" id="r5">
+        <div class="r5-1" id="r5-1"><b>B</b></div>
+        <div class="r5-2" id="r5-2"><b>0</b></div>
+        <div class="r5-3" id="r5-3"><b>1</b></div>
+        <div class="r5-4" id="r5-4"><b>2</b></div>
+        <div class="r5-5" id="r5-5"><b>2</b></div>
+        <div class="r5-6" id="r5-6"><b>2</b></div>
+        <div class="r5-7" id="r5-7"><b>2</b></div>
+        <div class="r5-8" id="r5-8"><b>2</b></div>
+        <div class="r5-9" id="r5-9"><b>2</b></div>
+      </div> 
+
+      <div class="r6 text-center" id="r6">
+        <div class="r6-1" id="r6-1"><b>C</b></div>
+        <div class="r6-2" id="r6-2"><b>0</b></div>
+        <div class="r6-3" id="r6-3"><b>1</b></div>
+        <div class="r6-4" id="r6-4"><b>2</b></div>
+        <div class="r6-5" id="r6-5"><b>2</b></div>
+        <div class="r6-6" id="r6-6"><b>3</b></div>
+        <div class="r6-7" id="r6-7"><b>3</b></div>
+        <div class="r6-8" id="r6-8"><b>3</b></div>
+        <div class="r6-9" id="r6-9"><b>3</b></div>
+      </div> 
+
+      <div class="r7 text-center" id="r7">
+        <div class="r7-1" id="r7-1"><b>D</b></div>
+        <div class="r7-2" id="r7-2"><b>0</b></div>
+        <div class="r7-3" id="r7-3"><b>1</b></div>
+        <div class="r7-4" id="r7-4"><b>2</b></div>
+        <div class="r7-5" id="r7-5"><b>2</b></div>
+        <div class="r7-6" id="r7-6"><b>3</b></div>
+        <div class="r7-7" id="r7-7"><b>3</b></div>
+        <div class="r7-8" id="r7-8"><b>4</b></div>
+        <div class="r7-9" id="r7-9"><b>4</b></div>
+      </div> 
+
+      <div class="r8 text-center" id="r8">
+        <div class="r8-1" id="r8-1"><b>Z</b></div>
+        <div class="r8-2" id="r8-2"><b>0</b></div>
+        <div class="r8-3" id="r8-3"><b>1</b></div>
+        <div class="r8-4" id="r8-4"><b>2</b></div>
+        <div class="r8-5" id="r8-5"><b>2</b></div>
+        <div class="r8-6" id="r8-6"><b>3</b></div>
+        <div class="r8-7" id="r8-7"><b>3</b></div>
+        <div class="r8-8" id="r8-8"><b>4</b></div>
+        <div class="r8-9" id="r8-9"><b>5</b></div>
+      </div> 
     </div>
 
     <div class="foother jumbotron">
@@ -67,6 +176,8 @@
         </div>
        
     </div>
-
+    <script src="JS/efectos.js"></script>
+    <script src="JS/colores.js"></script>
+    <script src="JS/anima.js"></script>
 </body>
 </html>
