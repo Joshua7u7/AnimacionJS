@@ -1,0 +1,91 @@
+.r1,.r2,.r3,.r4,.r5,.r6,.r7,.r8
+{
+    display: inline-flex;
+    width: 100%;
+    height: 63px;
+    margin-top: 15px;
+}
+
+.r1-1,.r1-2,.r1-3,.r1-4,.r1-5,.r1-6,.r1-7,.r1-8,.r1-9
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid #0DAAE8;
+    border-radius: 15px;
+    
+}
+
+.r2-1,.r2-2,.r2-3,.r2-4,.r2-5,.r2-6,.r2-7,.r2-8,.r2-9
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid #0DAAE8;
+    border-radius: 15px;
+}
+
+.r3-1,.r3-2,.r3-3,.r3-4,.r3-5,.r3-6,.r3-7,.r3-8,.r3-9
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid #0DAAE8;
+    border-radius: 15px;
+}
+
+.r4-1,.r4-2,.r4-3,.r4-4,.r4-5,.r4-6,.r4-7,.r4-8,.r4-9
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid #0DAAE8;
+    border-radius: 15px;
+}
+
+.r5-1,.r5-2,.r5-3,.r5-4,.r5-5,.r5-6,.r5-7,.r5-8,.r5-9
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid #0DAAE8;
+    border-radius: 15px;
+}
+
+.r6-1,.r6-2,.r6-3,.r6-4,.r6-5,.r6-6,.r6-7,.r6-8,.r6-9
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid #0DAAE8;
+    border-radius: 15px;
+}
+
+.r7-1,.r7-2,.r7-3,.r7-4,.r7-5,.r7-6,.r7-7,.r7-8,.r7-9
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid #0DAAE8;
+    border-radius: 15px;
+}
+
+.r8-1,.r8-2,.r8-3,.r8-4,.r8-5,.r8-6,.r8-7,.r8-8,.r8-9
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid #0DAAE8;
+    border-radius: 15px;
+}
+
+.seleccionado
+{
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
+    border-bottom: 6px solid black;
+    background-color: #830C00;
+    color: white;
+    border-radius: 15px;
+}
