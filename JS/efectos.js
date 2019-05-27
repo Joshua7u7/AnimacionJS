@@ -134,6 +134,8 @@ $(document).ready(function(){
 
     $("#play").click(function(){
         
+        $("#clean").prop("disabled",true);
+        
         for(var i=1;i<=9;i++)
             $("#r1-"+i).show(4000);
             
@@ -181,8 +183,13 @@ $(document).ready(function(){
   function iluminaBlanco()
   {
       data = {
-        "background-color":"#FFFFFF"
+        "background-color":"#000000"
       };
   
       return data;
+  }
+
+  function alerta()
+  {
+      alert("Hola");
   }
