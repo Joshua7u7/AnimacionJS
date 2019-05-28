@@ -128,7 +128,7 @@ function imprimirMatriz(matriz)
 
 function escribirTaba(matriz,cadena1,cadena2)
 {
-    var tabla = "<table class='table'>";
+    var tabla = "<table class='table' style='color:white;'>";
     tabla+= "<thead class='thead-light'>";
     tabla+= "<tr>";
     tabla+= "<th> </th>";
