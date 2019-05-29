@@ -104,7 +104,73 @@ function rutina()
         fila+=1; fila_2+=1;
     }
     //imprimirMatriz(matriz);
+    subsecuencia(matriz,cad1,cad2);
     escribirTaba(matriz,cad1,cad2);
+}
+
+function esDiferente(n1,n2,n3,n4)
+{
+    if(n1!=n4 && n2!=n4 && n3!=n4)
+        return 1
+    else if(n1==n4 && n2==n4 && n3==n4)
+        return 2
+    else if(n3==n4 && n2!=n4)
+        return 3
+    else if(n1==n4 && n3!=n4 && n2!=n4)
+        return 4
+    else
+        return 4
+}
+    
+      
+
+function subsecuencia(matriz,cadena_1,cadena_2)
+{
+    fila_2 = (matriz.length)-1; 
+    fila_1 = (matriz.length)-2;
+    izquierdo = (matriz[1].length)-2;
+    derecho = (matriz[1].length)-1;
+    pos = (cadena_2.length)-1; 
+    subsecuencia = [];
+    index=0;
+
+    while( (fila_1-1)>=-1 )
+    {
+        n1 = matriz[fila_1][izquierdo]; 
+        n2 = matriz[fila_1][derecho];
+        n3 = matriz[fila_2][izquierdo]; 
+        n4 = matriz[fila_2][derecho];
+        opcion = esDiferente(n1,n2,n3,n4);
+        if(opcion==1)
+        {
+            subsecuencia[index]=cadena_2[pos]
+            index+=1;
+            fila_2-=1; fila_1-=1;
+            izquierdo-=1; derecho-=1;
+            if(pos>=0)
+                pos-=1;
+            else
+                fila_1=-2;
+        }
+        else if(opcion==2 || opcion==3)
+        {
+              izquierdo-=1; 
+              derecho-=1;
+        }
+
+        else if(opcion==4)
+        {
+            fila_1-=1; 
+            fila_2-=1;
+            if(pos>=0)
+                pos-=1;
+            else
+                fila_1=-2;
+        }
+    }
+    subsecuencia = subsecuencia.reverse();
+
+    document.getElementById("subb").value = (subsecuencia.join(''));
 }
 
 function max(n1,n2)

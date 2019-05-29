@@ -63,25 +63,26 @@ def subsecuencia(matriz,cadena_1,cadena_2):
   pos = len(cadena_2)-1; subsecuencia = []
 
   while( (fila_1-1)>=-1 ):
-          n1 = matriz[fila_1][izquierdo]; n2 = matriz[fila_1][derecho]
-          n3 = matriz[fila_2][izquierdo]; n4 = matriz[fila_2][derecho]
-          opcion = esDiferente(n1,n2,n3,n4)
-          if(opcion==1):
-              subsecuencia.append(cadena_2[pos])
-              fila_2-=1; fila_1-=1;
-              izquierdo-=1; derecho-=1;
-              if(pos>=0):
-                pos-=1
-              else:
-                fila_1=-2;
-          elif(opcion==2 or opcion==3):
-              izquierdo-=1; derecho-=1;
-          elif(opcion==4):
-              fila_1-=1; fila_2-=1
-              if(pos>=0):
-                pos-=1;
-              else:
-                fila_1=-2;
+          if(fila_1>=0):
+            n1 = matriz[fila_1][izquierdo]; n2 = matriz[fila_1][derecho]
+            n3 = matriz[fila_2][izquierdo]; n4 = matriz[fila_2][derecho]
+            opcion = esDiferente(n1,n2,n3,n4)
+            if(opcion==1):
+                subsecuencia.append(cadena_2[pos])
+                fila_2-=1; fila_1-=1;
+                izquierdo-=1; derecho-=1;
+                if(pos>=0):
+                  pos-=1
+                else:
+                  fila_1=-2;
+            elif(opcion==2 or opcion==3):
+                izquierdo-=1; derecho-=1;
+            elif(opcion==4):
+                fila_1-=1; fila_2-=1
+                if(pos>=0):
+                  pos-=1;
+                else:
+                  fila_1=-2;
 
   print(''.join(subsecuencia[::-1]))
   
