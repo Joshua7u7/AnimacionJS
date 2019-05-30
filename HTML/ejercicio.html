@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title>Animación</title>
+    <title>Ejercicio</title>
 </head>
 <body>
     
@@ -23,25 +23,24 @@
     </div>
 
     <div>
-            <ul class="nav nav-pills" style="margin-top: 10px;">
-                    <li class="nav-item">
-                      <a class="nav-link text-secondary"  href="../menu.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-secondary"  href="../index.html">Ejemplo</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active bg-dark"  href="#ejercicio">Ejercicio</a>
-                    </li>
-                  </ul>
+        <ul class="nav nav-pills" style="margin-top: 10px;">
+                <li class="nav-item">
+                  <a class="nav-link text-secondary"  href="../menu.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary"  href="../index.html">Ejemplo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active bg-dark"  href="#ejercicio">Ejercicio</a>
+                </li>
+        </ul>
     </div>
 
-    <div class="Main_ejercicio" id="main">
-
-        <div class="Cuestionario">
-            <div class="logo text-center">
+    <div class="col-md-12" id="main">
+         <div class="col-md-4" style="margin:0 auto;">
+            <div class="logo text-center col-md-8">
                 <img id="imagen" src="http://www.escom.ipn.mx/images/conocenos/escudoESCOM.png" alt="">
-                <div class="texto">
+                <div class="texto col-md-8">
                         <p><b>ESCUELA SUPERIOR DE CÓMPUTO</b></p>
                 </div>
             </div>
@@ -49,33 +48,36 @@
             <div class="preguntas text-center">
                 <div class="cadenas">
                     <span class="p1">
-                            <p><b>Cadena 1:</b></p> <br>
+                            <p><h3>Cadena 1:</h3></p> <br>
                             <input type="text" id="cad1">
                     </span>
                         
                     <span class="p1">
-                            <p><b>Cadena 2:</b></p> <br>
+                            <p><h3>Cadena 2:</h3></p> <br>
                             <input type="text" id="cad2">
                     </span>
-                        
                 </div>
-                <button type="button" class="btn btn-outline-primary" onclick="rutina()">Evaluar</button>
+                <button type="button" class="botonEvaluar" onclick="rutina()">Evaluar</button>
                 <br> <br> <br>
-                <p><b>La subsecuencia mas larga es:</b></p> 
-                <input type="text" id="subb">
+                <p><h3>La subsecuencia mas larga es:</h3></p>
+                    <input type="text" id="subb">
             </div>
         </div>
-
-        <div id="tabla">
-
-        </div>
-
+        <button type="button" class="botonEvaluar col-md-2" data-toggle="modal" data-target="#exampleModal"
+                style="margin-left: 150px;">
+            Ver código
+        </button>
+        <button type="button" class="botonEvaluar col-md-2" style="margin-left: 50%;">
+            Juez Online
+        </button>
     </div>
-
+    <div id="tabla">
+    </div>
     <div class="foother jumbotron A_header">
 
         <div class="cabecera text-center">
-            <h1>ESCUELA SUPERIOR DE CÓMPUTO</h1>
+            <h1>ESCUELA SUPERIOR DE CÓMPUTO <br>
+            Team: Los Uzielitos</h1>
         </div>
 
         <div class="Main_f">
@@ -100,6 +102,114 @@
 
         </div>
        
+    </div>
+    <div class="modal col-md-8" role="dialog" id="exampleModal">
+        <div class="modal-dialog" role="">
+            <div class="modal-content col-md-12" style="width:5000px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color:black;">Código de LCS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="color: black;">
+                    <p>
+                        def MAX(n1,n2):<br>
+                        if(n1==n2 or n1<n2):<br>
+                        return n2<br>
+                        else:<br>
+                        return n1<br>
+
+                        def esDiferente(n1,n2,n3,n4):<br>
+                        if(n1!=n4 and n2!=n4 and n3!=n4):<br>
+                        return 1<br>
+                        elif(n1==n4 and n2==n4 and n3==n4):<br>
+                        return 2<br>
+                        elif(n3==n4 and n2!=n4):<br>
+                        return 3<br>
+                        elif(n1==n4 and n3!=n4 and n2!=n4):<br>
+                        return 4<br>
+                        else:<br>
+                        return 4<br>
+                        <br>
+                        def inicializar(cadena_1,cadena_2):<br>
+                        matriz = [ [ 0 for j in range(len(cadena_1)+1) ] for i in range(len(cadena_2)+1)]<br>
+                        cadena_1 = [token for token in cadena_1]<br>
+                        cadena_2 = [token for token in cadena_2]<br>
+                        fila_1 = 0; fila_2 = 1;<br>
+                        for index_2 in range(len(cadena_2)):<br>
+                        if(fila_2<=len(cadena_2)):<br>
+                        col_1 = 1; col_2 = 0;<br>
+                        pos = 1<br>
+                        for index_1 in range(len(cadena_1)):<br>
+                        if(col_1<=len(cadena_1)):<br>
+                        <br>
+                        if(cadena_1[index_1]==cadena_2[index_2]):<br>
+                        aux = MAX(matriz[fila_1][col_1],matriz[fila_2][col_2])<br>
+                        if( index_1>aux and index_2<aux):<br>
+                        if(pos<=len(cadena_1)):<br>
+                        if(fila_2<=len(cadena_2)):<br>
+                        matriz[fila_2][pos] = aux<br>
+                        pos+=1<br>
+                        elif (index_2>index_1 and index_1<aux):<br>
+                        if(pos<=len(cadena_1)):<br>
+                        if(fila_2<=len(cadena_2)):<br>
+                        matriz[fila_2][pos] = aux<br>
+                        pos+=1<br>
+                        else:<br>
+                        if(pos<=len(cadena_1)):<br>
+                        if(fila_2<=len(cadena_2)):<br>
+                        matriz[fila_2][pos] = aux+1<br>
+                        pos+=1<br>
+                        else:<br>
+                        <br>
+                        aux = MAX(matriz[fila_1][col_1],matriz[fila_2][col_2])<br>
+                        matriz[fila_2][pos] = aux<br>
+                        pos+=1<br>
+                        <br>
+                        col_1+=1; col_2+=1<br>
+                        <br>
+                        fila_1+=1; fila_2+=1;<br>
+                        subsecuencia(matriz,cadena_1,cadena_2)<br>
+                        <br>
+                        def subsecuencia(matriz,cadena_1,cadena_2):<br>
+                        fila_2 = len(matriz)-1; fila_1 = len(matriz)-2<br>
+                        izquierdo = len(matriz[1])-2; derecho = len(matriz[1])-1<br>
+                        pos = len(cadena_2)-1; subsecuencia = []<br>
+                        <br>
+                        while( (fila_1-1)>=-1 ):<br>
+                        if(fila_1>=0):<br>
+                        n1 = matriz[fila_1][izquierdo]; n2 = matriz[fila_1][derecho]<br>
+                        n3 = matriz[fila_2][izquierdo]; n4 = matriz[fila_2][derecho]<br>
+                        opcion = esDiferente(n1,n2,n3,n4)<br>
+                        if(opcion==1):<br>
+                        subsecuencia.append(cadena_2[pos])<br>
+                        fila_2-=1; fila_1-=1;<br>
+                        izquierdo-=1; derecho-=1;<br>
+                        if(pos>=0):<br>
+                        pos-=1<br>
+                        else:<br>
+                        fila_1=-2;<br>
+                        elif(opcion==2 or opcion==3):<br>
+                        izquierdo-=1; derecho-=1;<br>
+                        elif(opcion==4):<br>
+                        fila_1-=1; fila_2-=1<br>
+                        if(pos>=0):<br>
+                        pos-=1;<br>
+                        else:<br>
+                        fila_1=-2;<br>
+                        <br>
+                        print(''.join(subsecuencia[::-1]))<br>
+                        <br>
+
+                        if __name__ == "__main__":<br>
+                        cadena_1 = input('Cadena 1: ')<br>
+                        cadena_2 = input('Cadena 2: ')<br>
+                        inicializar(cadena_1,cadena_2)<br>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="../JS/algoritmo.js"></script>  

@@ -2,23 +2,22 @@
 {
     margin-bottom: 0;
     width: 100%;
-    height: 1000px;;
+    height: 1000px;
 }
 
-.Cuestionario
+/*.Cuestionario
 {
     width: 50%;
     height: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
     margin-top: 5%;
-}
+}*/
 
 .logo
 {
     width: 100%;
     height: 30%;
     display: inline-flex;
+    font-size: 28px;
 }
 
 .texto
@@ -59,4 +58,26 @@
     margin-right: 25%;
     margin-top: 5%;
     margin-bottom: 15%;
+}
+
+.botonEvaluar{
+    color: #318aac !important;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    border: 2px solid;
+    border-color: #318aac;
+    transition: all 1s ease;
+    position: relative;
+    margin-top: 5%;
+}
+
+.botonEvaluar:hover {
+    background: #318aac;
+    color: #fff !important;
+}
+
+.modal-content{
+    background-color: #B6DDE2;
 }
