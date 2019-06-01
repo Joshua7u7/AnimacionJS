@@ -226,6 +226,7 @@ function escribirTaba(matriz,cadena1,cadena2)
     document.querySelector("#tabla").innerHTML = tabla;
 }
 
+/*
 function modalJuez(){
     $('.modal-body').load('link_python',function () {
         $('#modalJuez').modal({
@@ -233,6 +234,12 @@ function modalJuez(){
         });
     });
 }
+*/
 
+window.onload = poner;
+function poner()
+{
+    document.querySelector("#jupyter").innerHTML = "<embed src='../Subsecuencia.html#toolbar=0' width='100%' height='100%'>";  
+}
 //Access-Control-Allow-Origin: https://amazing.site
 //var link_python = "https://firebasestorage.googleapis.com/v0/b/prueba-77144.appspot.com/o/Subsecuencia.ipynb?alt=media&token=b69cd6a0-4603-4bb8-8518-a83ae387058c";
