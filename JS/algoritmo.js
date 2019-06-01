@@ -225,3 +225,14 @@ function escribirTaba(matriz,cadena1,cadena2)
 
     document.querySelector("#tabla").innerHTML = tabla;
 }
+
+function modalJuez(){
+    $('.modal-body').load('link_python',function () {
+        $('#modalJuez').modal({
+            show: true
+        });
+    });
+}
+
+//Access-Control-Allow-Origin: https://amazing.site
+//var link_python = "https://firebasestorage.googleapis.com/v0/b/prueba-77144.appspot.com/o/Subsecuencia.ipynb?alt=media&token=b69cd6a0-4603-4bb8-8518-a83ae387058c";
