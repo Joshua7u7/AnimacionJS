@@ -31,45 +31,50 @@ var pos_id_1 = 0;
 var pos_id_2 = 0;
 var pos_next = 0;
 
-var audio = document.createElement("audio");
-audio.setAttribute("src","https://firebasestorage.googleapis.com/v0/b/prueba-77144.appspot.com/o/3p.mp3?alt=media&token=51ed2fb1-6718-4b39-9e1b-dbc16c0a5695");
 
 async function Anima(letra1,letra2,id1,id2,nexxt)
 {
   $(letra1).animate(iluminaNaranja(),2000,function(){});
-  $(letra2).animate(iluminaNaranja(),2000,function(){
+  $(letra2).animate(iluminaNaranja(),2000,async function(){
+      await speechSynthesis.speak(new SpeechSynthesisUtterance("Comparamos si ambas letras son iguales"));
       document.querySelector("#mensaje").innerText = "Comparamos si ambas letras son iguales";
   });
-  /*$(letra1).delay(8000);
+  $(letra1).delay(8000);
   $(letra2).delay(8000);
   $(id1).delay(2000);
-  $(id2).delay(2000);*/
+  $(id2).delay(2000);
   $(id1).animate(iluminaAzul(),2000,function(){});
 
-  $(id2).animate(iluminaAzul(),2000,function(){
+  $(id2).animate(iluminaAzul(),2000,async function(){
     var l1 = document.querySelector(letra1).innerText;
     var l2 = document.querySelector(letra2).innerText;
     if(l1==l2)
     {
-        audio.pause();
-        audio.play();
         var m1 = "Las letras son iguales, obtenemos el máximo de los 2 números marcados en azul y le sumamos 1";
-        if((pos_id_1>pos_id_2) || (pos_id_1<pos_id_2))
+        var m2 = m1+ ", pero no podemos sumar por que el tamaño de la subsecuencia no puede ser mayor al de la cadena actual";
+        
+        if((indice_letra_1>indice_letra_2))
         {
-            document.querySelector("#mensaje").innerText =m1+ "\nNo podemos sumar por que el tamaño de la subsecuencia no puede ser mayor al de la cadena actual";
+          await speechSynthesis.speak(new SpeechSynthesisUtterance(m2));
+            document.querySelector("#mensaje").innerText = m2;
         }
         else
         {
+          await speechSynthesis.speak(new SpeechSynthesisUtterance(m1));
             document.querySelector("#mensaje").innerText =m1;
         }
         
     }
    
     else
-    document.querySelector("#mensaje").innerText = "Como son diferentes simplemente escogemos el máximo de los 2 números en azul y lo colocamos en seguida";
+    {
+      await speechSynthesis.speak(new SpeechSynthesisUtterance("Como son diferentes simplemente escogemos el máximo de los 2 números en azul y lo colocamos en seguida"));
+      document.querySelector("#mensaje").innerText = "Como son diferentes simplemente escogemos el máximo de los 2 números en azul y lo colocamos en seguida";
+    }
+    
   });
-  /*$(id2).delay(1000);
-  $(id1).delay(3000);*/
+  $(id2).delay(1000);
+  $(id1).delay(3000);
   $(id2).animate(iluminaRojo(),2000,function(){
     var a = document.querySelector(id1).innerText;
     var b = document.querySelector(id2).innerText;
@@ -139,9 +144,10 @@ var s_fila_2=8, s_col_2=9;
 var s_fila_1=7, s_col_1=8;
 var sub_aux="";
 var cont=0;
-var subsecuencia_final = ['Z','D','C','A'];
+var subsecuencia_final = ['Z','D','C','B','A'];
 var band = true;
-function subsecuencia()
+
+async function subsecuencia()
 {
     var _2 = "#r"+s_fila_2+"-"+s_col_2;
     var _1 = "#r"+s_fila_1+"-"+s_col_1;
@@ -149,7 +155,7 @@ function subsecuencia()
     $(_1).animate(iluminaAzul(),3000,function(){});
 
     $(_2).animate(iluminaBlanco(),3000,function(){});
-    $(_1).animate(iluminaBlanco(),3000,function(){
+    $(_1).animate(iluminaBlanco(),3000,async function(){
         var valor_1 = parseInt(document.querySelector(_2).innerText);
         var valor_2 = parseInt(document.querySelector(_1).innerText);
 
@@ -157,11 +163,16 @@ function subsecuencia()
         {
             if(s_fila_1>=2)
             {
-                if(band)
+                if(band || !band)
                 {
                     sub_aux+=subsecuencia_final[cont];
                     cont+=1;
-                    document.querySelector("#mensaje").innerText = sub_aux;
+                    var la="";
+                    for(var i=sub_aux.length-1;i>=0;i--)
+                    {
+                      la+=sub_aux[i];
+                    }
+                    document.querySelector("#mensaje").innerText = la;
                 }
                 else
                     band=true;
@@ -182,6 +193,15 @@ function subsecuencia()
         }
         if((s_col_1!=1))
         subsecuencia();
+        else
+        {
+          await speechSynthesis.speak(new SpeechSynthesisUtterance("La subsecuencia más larga es: "));
+          var la="";
+          for(var i = sub_aux.length-1;i>=0;i--)
+            la+=sub_aux[i];
+          for(var j = 0;j<la.length;j++)
+            await speechSynthesis.speak(new SpeechSynthesisUtterance(la[j]));
+        }
     });
     
 }
@@ -217,6 +237,7 @@ $(document).ready(function(){
     });
 
     $("#sub").click(function(){
+      document.querySelector("#mensaje").innerText = "";
         subsecuencia();
     });
   });
