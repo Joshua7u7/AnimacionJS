@@ -14,240 +14,152 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://bitstorm.org/jquery/color-animation/jquery.animate-colors-min.js"></script>
-    
-    <title>Animación</title>
+
+    <title>Home</title>
 </head>
 <body>
-    
-    <div class="A_header text-center">
-        <h1>Análisis de algoritmos</h1>
-        <h2>LCS</h2>
-        <h3>Longest Common Subsequence</h3>
-    </div>
 
-    <div class="mm" style="margin-top: 10px;">
-            <ul class="nav nav-pills" >
-                    <li class="nav-item">
-                      <a class="nav-link text-secondary"  href="menu.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active bg-dark" data-toggle="pill" href="#ejemplo">Ejemplo</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-secondary"  href="HTML/ejercicio.html">Ejercicio</a>
-                    </li>
-                    <li>
-                      <a href="javascript:hola()" class="btn_chido" style="margin-left: 100px;" id="play">
-                        Generar tabla
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </a>
-                    </li>
+<div class="A_header text-center">
+    <h1>Análisis de algoritmos</h1>
+    <h2>LCS</h2>
+    <h3>Longest Common Subsequence</h3>
+</div>
 
-                    <li>
-                        <a href="javascript:hola()" class="btn_chido" style="margin-left: 50px;" id="sub">
-                          Obtener subsecuencia
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                        </a>
-                      </li>
+<!--- <div class="mm" style="margin-top: 30px;"> --->
+    <ul class="nav nav-pills" style="margin-top: 10px;" >
+        <li class="nav-item">
+            <a class="nav-link active bg-dark" data-toggle="pill" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-secondary"  href="home.html">Ejemplo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-secondary"  href="HTML/ejercicio.html">Ejercicio</a>
+        </li>
+    </ul>
+<!--- </div> --->
+ <div >
+        <div class="col-md-12" style="font-size: 50px;font-weight: bold;
+            font-style: italic; text-align: center;">Subsecuencia común máxima</div>
+ </div>
+        <!---
+               <div class="col-md-4" style="text-align: center; margin: 0 auto;">
+                   La subsecuencia común máxima de dos arreglos (pueden ser cadenas), es la subsecuencia que
+                   se encuentra tanto en el primer arreglo, como en el segundo, y es de longitud máxima.
+                   Al igual que en el problema anterior, los elementos de la subsecuencia no necesariamente son adyacentes.
+                   Esta subsecuencia es útil en problemas genéticos, principalmente para encontrar relaciones entre cadenas de ADN.
+               </div>
+           </ol>
+       </div> --->
 
-                    <li>
-                      <a href="javascript:hola()" class="btn_chido" style="margin-left: 50px;" id="clean">
-                        Clean
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </a>
-                    </li>
-                  </ul>
-    </div>
-
-    <div class="Main" id="main">
-      <div class="fijos">
-            <span class="mensajefijo" id="mensaje2">
-                Cadena 1: A A B C D Z
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Subsecuencias de las cadenas:
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Subsecuencia más larga:
-            </span>
-          <span class="subcadenas" id="mensaje2">
-                <li>
-                    A, AB, AA, AD
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              ABCDZ
-                </li>
-
-            </span>
-          <span class="subcadenas" id="mensaje2">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li>
-                    AAC, ACD, ABC
-                </li>
-          </span>
-          <span class="subcadenas" id="mensaje2">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li>
-                    ABCD, AACD
-                </li>
-          </span>
-            <span class="mensajefijo" id="mensaje3">Cadena 2: A B A C A D Z</span>
-      </div>
-        <div class="pantalla">
-            <span class="mensaje" id="mensaje"> </span>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block" src="Imagen/Fondo_Negro.jpg" alt="First slide" style="height: 400px; width:80%;
+                margin: 0 auto">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class="col-md-6" style="margin: 0 auto; text-align: center; top:-70px;">
+                    LCS (por sus siglas en inglés Longest Common Subsequence) es un algoritmo que
+                    sirve para hallar la subsecuencia común más larga entre dos cadenas de caracteres.
+                </h2>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block" src="Imagen/Fondo_negro.jpg" alt="Second slide" style="height: 300px; width: 80%;
+                margin:0 auto; text-align: center">
+            <div class="carousel-caption d-none d-md-block"">
+                <h2 class="col-md-6" style="margin: 0 auto; text-align: center;">
+                    La subsecuencia común máxima de dos arreglos (pueden ser cadenas), es la subsecuencia que
+                    se encuentra tanto en el primer arreglo, como en el segundo, y es de longitud máxima.
+                </h2>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="Imagen/Fondo_negro.jpg" alt="Third slide" style="height:300px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class="col-md-6" style="margin: 0 auto; text-align: center;">
+                    Los elementos de la subsecuencia no necesariamente son adyacentes.
+                    Esta subsecuencia es útil en problemas genéticos, principalmente para
+                    encontrar relaciones entre cadenas de ADN.
+                </h2>
+            </div>
         </div>
 
-      <div class="r1 text-center" id="r1">
-        <div class="r1-1" id="r1-1"></div>
-        <div class="r1-2" id="r1-2"></div>
-        <div class="r1-3" id="r1-3"><b>A</b></div>
-        <div class="r1-4" id="r1-4"><b>B</b></div>
-        <div class="r1-5" id="r1-5"><b>A</b></div>
-        <div class="r1-6" id="r1-6"><b>C</b></div>
-        <div class="r1-7" id="r1-7"><b>A</b></div>
-        <div class="r1-8" id="r1-8"><b>D</b></div>
-        <div class="r1-9" id="r1-9"><b>Z</b></div>
-
-      </div> 
-
-      <div class="r2 text-center" id="r2">
-        <div class="r2-1" id="r2-1"></div>
-        <div class="r2-2" id="r2-2"><b>0</b></div>
-        <div class="r2-3" id="r2-3"><b>0</b></div>
-        <div class="r2-4" id="r2-4"><b>0</b></div>
-        <div class="r2-5" id="r2-5"><b>0</b></div>
-        <div class="r2-6" id="r2-6"><b>0</b></div>
-        <div class="r2-7" id="r2-7"><b>0</b></div>
-        <div class="r2-8" id="r2-8"><b>0</b></div>
-        <div class="r2-9" id="r2-9"><b>0</b></div>
-      </div> 
-
-      <div class="r3 text-center" id="r3">
-        <div class="r3-1" id="r3-1"><b>A</b></div>
-        <div class="r3-2" id="r3-2"><b>0</b></div>
-        <div class="r3-3" id="r3-3"><b>1</b></div>
-        <div class="r3-4" id="r3-4"><b>1</b></div>
-        <div class="r3-5" id="r3-5"><b>1</b></div>
-        <div class="r3-6" id="r3-6"><b>1</b></div>
-        <div class="r3-7" id="r3-7"><b>1</b></div>
-        <div class="r3-8" id="r3-8"><b>1</b></div>
-        <div class="r3-9" id="r3-9"><b>1</b></div>
-      </div> 
-
-      <div class="r4 text-center" id="r4">
-        <div class="r4-1" id="r4-1"><b>A</b></div>
-        <div class="r4-2" id="r4-2"><b>0</b></div>
-        <div class="r4-3" id="r4-3"><b>1</b></div>
-        <div class="r4-4" id="r4-4"><b>1</b></div>
-        <div class="r4-5" id="r4-5"><b>2</b></div>
-        <div class="r4-6" id="r4-6"><b>2</b></div>
-        <div class="r4-7" id="r4-7"><b>2</b></div>
-        <div class="r4-8" id="r4-8"><b>2</b></div>
-        <div class="r4-9" id="r4-9"><b>2</b></div>
-      </div> 
-
-      <div class="r5 text-center" id="r5">
-        <div class="r5-1" id="r5-1"><b>B</b></div>
-        <div class="r5-2" id="r5-2"><b>0</b></div>
-        <div class="r5-3" id="r5-3"><b>1</b></div>
-        <div class="r5-4" id="r5-4"><b>2</b></div>
-        <div class="r5-5" id="r5-5"><b>2</b></div>
-        <div class="r5-6" id="r5-6"><b>2</b></div>
-        <div class="r5-7" id="r5-7"><b>2</b></div>
-        <div class="r5-8" id="r5-8"><b>2</b></div>
-        <div class="r5-9" id="r5-9"><b>2</b></div>
-      </div> 
-
-      <div class="r6 text-center" id="r6">
-        <div class="r6-1" id="r6-1"><b>C</b></div>
-        <div class="r6-2" id="r6-2"><b>0</b></div>
-        <div class="r6-3" id="r6-3"><b>1</b></div>
-        <div class="r6-4" id="r6-4"><b>2</b></div>
-        <div class="r6-5" id="r6-5"><b>2</b></div>
-        <div class="r6-6" id="r6-6"><b>3</b></div>
-        <div class="r6-7" id="r6-7"><b>3</b></div>
-        <div class="r6-8" id="r6-8"><b>3</b></div>
-        <div class="r6-9" id="r6-9"><b>3</b></div>
-      </div> 
-
-      <div class="r7 text-center" id="r7">
-        <div class="r7-1" id="r7-1"><b>D</b></div>
-        <div class="r7-2" id="r7-2"><b>0</b></div>
-        <div class="r7-3" id="r7-3"><b>1</b></div>
-        <div class="r7-4" id="r7-4"><b>2</b></div>
-        <div class="r7-5" id="r7-5"><b>2</b></div>
-        <div class="r7-6" id="r7-6"><b>3</b></div>
-        <div class="r7-7" id="r7-7"><b>3</b></div>
-        <div class="r7-8" id="r7-8"><b>4</b></div>
-        <div class="r7-9" id="r7-9"><b>4</b></div>
-      </div> 
-
-      <div class="r8 text-center" id="r8">
-        <div class="r8-1" id="r8-1"><b>Z</b></div>
-        <div class="r8-2" id="r8-2"><b>0</b></div>
-        <div class="r8-3" id="r8-3"><b>1</b></div>
-        <div class="r8-4" id="r8-4"><b>2</b></div>
-        <div class="r8-5" id="r8-5"><b>2</b></div>
-        <div class="r8-6" id="r8-6"><b>3</b></div>
-        <div class="r8-7" id="r8-7"><b>3</b></div>
-        <div class="r8-8" id="r8-8"><b>4</b></div>
-        <div class="r8-9" id="r8-9"><b>5</b></div>
-      </div> 
-    </div>
-
-    <div class="foother jumbotron A_header">
-
-        <div class="cabecera text-center">
-            <h1>ESCUELA SUPERIOR DE CÓMPUTO<br>
-                Team: Los Uzielitos</h1>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="Imagen/Fondo_negro.jpg" alt="Third slide" style="height:350px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class = "col-md-6" style="margin: 0 auto; text-align: center;">
+                Dada la secuencia X = x1, x2, …, xm, otra secuencia
+                    Z = z1, z2, …, zk es una subsecuencia de X si existe
+                    una secuencia creciente i1, i2, …, ik (no
+                    necesariamente contiguos) de índices de X tal que
+                    para cada j = 1,2, …, k, tenemos que xij
+                    = zj.
+                </h2>
+            </div>
         </div>
 
-        <div class="Main_f">
-
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 izquierdo text-center">
-                        <img src="Imagen\me.jpg" alt="">
-                        <p><b>Josué Ruíz Hernandez</b></p>
-                        <p><b>Grupo: 3cm3</b></p>
-                </div>
-            
-                <div class=" col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 centro text-center">
-                        <img src="Imagen\dani.jpg" alt="">
-                        <p><b>Daniel Rafael Solorio Paredes</b></p>
-                        <p><b>Grupo: 3cm3</b></p>
-                </div>
-            
-                <div class=" col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 derecho text-center">
-                        <img src="Imagen\alejandro.jpg" alt="">
-                        <p><b>Abner Alejandro Valdivia Del Angel</b></p>
-                        <p><b>Grupo: 3cm3</b></p>
-                </div>
-
+        <div class="carousel-item">
+            <img class="d-block w-100" src="Imagen/Fondo_negro.jpg" alt="Third slide" style="height:350px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class="col-md-6" style="margin: 0 auto; text-align: center;">
+                    Por ejemplo: <br><br>
+                    <img src="Imagen/ejemplo.jpg" style="width: 400px;" >
+                </h2>
+            </div>
         </div>
-       
     </div>
-    <script src="JS/efectos.js"></script>
-    <script src="JS/colores.js"></script>
-    <script src="JS/anima.js"></script>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+
+<div class="foother jumbotron A_header">
+
+    <div class="cabecera text-center">
+        <h1>ESCUELA SUPERIOR DE CÓMPUTO<br>
+            Team: Los Uzielitos</h1>
+    </div>
+
+    <div class="Main_f">
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 izquierdo text-center">
+            <img src="Imagen\me.jpg" alt="">
+            <p><b>Josué Ruíz Hernandez</b></p>
+            <p><b>Grupo: 3cm3</b></p>
+        </div>
+
+        <div class=" col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 centro text-center">
+            <img src="Imagen\dani.jpg" alt="">
+            <p><b>Daniel Rafael Solorio Paredes</b></p>
+            <p><b>Grupo: 3cm3</b></p>
+        </div>
+
+        <div class=" col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 derecho text-center">
+            <img src="Imagen\alejandro.jpg" alt="">
+            <p><b>Abner Alejandro Valdivia Del Angel</b></p>
+            <p><b>Grupo: 3cm3</b></p>
+        </div>
+
+    </div>
+
+</div>
+<script src="JS/efectos.js"></script>
+<script src="JS/colores.js"></script>
+<script src="JS/anima.js"></script>
 </body>
 </html>
